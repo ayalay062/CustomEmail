@@ -1,0 +1,23 @@
+<div [formGroup]= mailForm>
+
+<label>נושא</label>
+<input     formControlName="subject"  type="text" pInputText> 
+
+<p-editor     formControlName="message"  [style]="{'height':'320px'}"></p-editor>
+<p-button (click)="openDialog()" >שליחה</p-button>
+<p-dialog [(visible)]="emailDialog" [style]="{width: '750px'}"   header="פרטי המייל" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <label> שם השולח</label>
+        <input     formControlName="name" type="text" pInputText>
+        <br>
+        <label>כתובת המייל</label>
+        <input type="text"     formControlName="mailAddress" pInputText>
+        <br>
+        <label>סיסמה</label> 
+        <input type="password" formControlName="password"          pInputText> 
+    </ng-template>
+    <ng-template pTemplate="footer">
+      <button pButton pRipple label="שלח" icon="pi pi-check" class="p-button-text" (click)="send()"></button>
+  </ng-template>
+    </p-dialog>
+</div>

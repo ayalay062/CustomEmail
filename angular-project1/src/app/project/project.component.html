@@ -1,0 +1,87 @@
+<h1>{{userName}}</h1>
+<div [formGroup]= projectForm>
+    <div class="p-text-center">
+    <label>בחר פרויקט</label>
+    <p-dropdown 
+    (onChange)="getTablesName()"
+    [options]="projectsname" 
+    optionLabel="projectname"  
+    placeholder=" " 
+    formControlName="projectName"  
+    >
+   </p-dropdown>
+   </div>
+   <br>
+   <br>
+   <div class="row" [class.display-select]="disable===false">
+    <div class="col-4">
+    <label>בחר טבלה לסינון </label>
+    <br>
+    <p-dropdown 
+     (onChange)="getColum()"
+     [options]="tableName" 
+     optionLabel="Name"
+     placeholder=" "
+     formControlName="tableOfFilter"
+     >
+   </p-dropdown>
+    </div>
+    <div class="col-4">
+     <label>בחר עמודה לסינון </label>
+     <br>
+     <p-multiSelect [options]="columNameForFilter"  defaultLabel="בחר עמודה לסינון" 
+     optionLabel="Name" formControlName="columsName" (onPanelHide)="binSelect()"></p-multiSelect>
+     </div>
+     <div class="col-4">
+        <p-button (click)="saveSelectedFilter()">שמירה </p-button>‏
+     </div>
+
+ </div>
+ <br>
+ <br>
+ <div class="row" [class.display-select]="disable===false">
+   <div class="col-4">
+   <label>בחר טבלה המכילה עמודת כתובות מיל </label>
+   <br>
+   <p-dropdown 
+    (onChange)="getColumForMail()"
+    [options]="tableName" 
+    optionLabel="Name"
+    placeholder=" "
+    formControlName="tableOfMailAddresss"
+    
+    >
+  </p-dropdown>
+   </div>
+   <div class="col-4">
+    <label>בחר עמודה המכילה את כתובות המיל </label>
+    <br>
+    <p-dropdown 
+    [options]="columName"
+    optionLabel="Name"
+    placeholder=" "
+     formControlName="emailColumn"
+      >
+    </p-dropdown>
+    </div>
+    <div class="col-4">
+      <label>בחר עמודה המכילה את שמות האנשים </label>
+      <br>
+      <p-dropdown 
+      [options]="columName"
+      optionLabel="Name"
+      placeholder=" "
+       formControlName="columName"
+        >
+      </p-dropdown>
+      </div>
+    <div class="col-4">
+        <p-button (click)="end()">סיום </p-button>
+    </div>
+ </div>
+
+  
+ 
+
+
+

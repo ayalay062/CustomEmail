@@ -1,0 +1,52 @@
+
+<div [formGroup]= projectForm>
+    <div class="p-text-center">
+    <p-button (click)="projectName()">שם פרויקט </p-button>
+    <p-dropdown 
+    (onChange)="getTablesName()"
+    [options]="projectsname" 
+    optionLabel="projectname"  
+    placeholder=" " 
+    formControlName="projectName"  
+    >
+  </p-dropdown>
+</div>
+  <br>
+  <br>
+ <div class="row" [class.display-select]="disable===false">
+  <div class="col-4">
+  <label>בחר טבלה המכילה כתובות מיל </label>
+  <br>
+  <p-dropdown 
+  (onChange)="getColum()"
+   [options]="tableList" 
+   optionLabel=" "
+    placeholder=" "
+    formControlName="table"
+    >
+  </p-dropdown>
+   </div>
+   <div class="col-4">
+    <label>בחר טבלה המכילה כתובות מיל </label>
+    <br>
+    <p-dropdown 
+    
+     [options]="columList" 
+     
+      placeholder=" "
+      formControlName="columName"
+      >
+    </p-dropdown>
+     </div>
+ 
+</div>
+<!-- <p-dropdown id="NafaName" class="col-xl-6-plus-plus col-8"
+                [options]="nafot"
+                optionLabel="nafaName"  
+                placeholder=" "   
+                formControlName="nafa" >
+                </p-dropdown> -->
+
+
+
+

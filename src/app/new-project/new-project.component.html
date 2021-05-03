@@ -1,0 +1,16 @@
+ <div [formGroup]="tryForm">
+    <div>
+    <label> שרת</label>
+    <input  type="text"  formControlName="serverName" pInputText> 
+   </div>
+    <br>
+   <div>
+    <label >שם פרויקט</label>
+    <input  formControlName="projectName"  pInputText >
+  <br>
+   <!-- <p-button (click)="savethedb()">"שמירה" </p-button>   -->
+    <p-button (click)="savethedb()">שמירה </p-button>
+    <select >
+        <option  *ngFor="let t of tableList"  >{{t.table}}</option>
+    </select>
+</div>  

@@ -1,0 +1,37 @@
+<div class="container new-compamy">
+    <div [formGroup]="companyForm" class="colum col-12" >
+        <br>
+        <div>
+            <label> שם חברה</label>
+            <input  type="text"  formControlName="Name" pInputText> 
+        </div>
+         <br>
+        <div>
+            <label >סיסמה</label>
+            <input type="password" formControlName="Password" pInputText >
+        </div>
+        <br>
+        <div class="p-field p-col-12 p-md-4">
+            <label >תאריך התחלתי</label>
+            <p-calendar  showButtonBar="true"  formControlName="ContractStartDate"></p-calendar>
+        </div>
+      <br>
+        <div>
+            <label>לוגו</label>
+            <input type="text" formControlName="Logo" pInputText>
+            </div>
+        <br>
+        <div>
+            <label> שם שרת</label>
+            <input  formControlName="ServerName"  pInputTextarea >
+        </div>
+    <p-button label="התחברות"(click)="AddCompany()"></p-button>
+    <br>
+    <p-fileUpload #fubauto mode="basic" name="demo[]" url="./upload.php" accept="image/*" maxFileSize="1000000"    chooseLabel="Browse"></p-fileUpload>
+   
+</div>
+</div>
+
+
+
+
