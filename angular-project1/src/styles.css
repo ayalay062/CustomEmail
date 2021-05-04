@@ -1,52 +1,382 @@
-/* You can add global styles to this file, and also import other style files */
-
-/* @import "~bootstrap/dist/css/bootstrap.css"; 
-
-body{
-     background-color: lightseagreen !important;
-     text-align: center;
-     direction: rtl;
-    
-    } */
-
-/* body .new-compamy .p-inputtext{
-    width: 500px !important
-} */
-  /* all  the input in new company to change the width */
-    /* .p-inputtext {
-     
-     width: 400px;
-    
- } */
- /* msg.p-message .p-message-wrapper{
-  padding: inherit;
- } */
- /* You can add global styles to this file, and also import other style files */
-
-@import "~bootstrap/dist/css/bootstrap.css"; 
-
+@import "~bootstrap/dist/css/bootstrap.css";
 @import '~quill/dist/quill.core.css';
 @import '~quill/dist/quill.bubble.css';
 @import '~quill/dist/quill.snow.css';
-body{
-     background-color: lightseagreen !important;
-     text-align: center;
-     direction: rtl;
-    
-    }
+body {
+    text-align: center;
+    direction: rtl;
+}
 
-/* body .new-compamy .p-inputtext{
-    width: 500px !important
-} */
-  /* all  the input in new company to change the width */
-    /* .p-inputtext {
-     
-     width: 400px;
-    
- } */
- msg.p-message .p-message-wrapper{
-  padding: inherit;
- }
- .display-select{
-   display: none;
- }
+msg.p-message .p-message-wrapper {
+    padding: inherit;
+}
+
+.display-select {
+    display: none;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+@font-face {
+    font-family: ass;
+    src: url(assets/font/Assistant-Regular.ttf) format("opentype");
+}
+
+section::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+section::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+section::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: none;
+    border-radius: 10px;
+}
+
+body .mat-body,
+body .mat-body-1,
+body .mat-typography,
+body .mat-table,
+body .mat-list-item,
+body .mat-h1,
+body .mat-headline,
+body .mat-typography h1,
+body .mat-toolbar,
+body .mat-toolbar h1,
+body .mat-toolbar h2,
+body .mat-toolbar h3,
+body .mat-toolbar h4,
+body .mat-toolbar h5,
+body .mat-toolbar h6,
+body span,
+body strong body .p-inputtext {
+    font-family: ass, Roboto, "Helvetica Neue", sans-serif;
+    direction: rtl;
+    color: #757575;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: ass, Roboto, "Helvetica Neue", sans-serif!important;
+    direction: rtl;
+}
+
+body {
+    margin: 0;
+    font-family: ass, Roboto, "Helvetica Neue", sans-serif;
+}
+
+span:focus,
+div:focus {
+    outline: none!important;
+}
+
+.footer-wrapper button {
+    display: inline-block;
+    margin: 10px;
+}
+
+.btn-grey {
+    padding: 0px 20px;
+    font-size: 16px;
+    line-height: 26px;
+    padding-bottom: 0px;
+    margin: auto;
+    cursor: pointer;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 1px solid #c3c3c3;
+    color: #ffffff;
+    background-color: #c3c3c3;
+    transition: background-color 0.35s, opacity 0.35s;
+    /* border-radius: 15px; */
+    text-transform: uppercase;
+    font-weight: 400;
+    min-width: 80px;
+}
+
+.btn-color {
+    padding: 0px 20px;
+    font-size: 16px;
+    line-height: 26px;
+    padding-bottom: 0px;
+    margin: auto;
+    cursor: pointer;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 1px solid #7a7a7a;
+    color: #ffffff;
+    background-color: #7a7a7a;
+    transition: background-color 0.35s, opacity 0.35s;
+    /* border-radius: 15px; */
+    text-transform: uppercase;
+    font-weight: 400;
+    min-width: 80px;
+}
+
+.btn-color:hover,
+.btn-grey:hover {
+    box-shadow: 0 0 3px 1px #969696;
+}
+
+.disaply-inline {
+    display: inline-block!important
+}
+
+.btn-color:disabled {
+    background-color: #ccc;
+    color: white;
+}
+
+.mat-form-field-label mat-label {
+    color: #757575;
+    ;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+    border-bottom: 1px solid #757575;
+    ;
+}
+
+.form-wrapper h1,
+.form-wrapper h2 {
+    border-bottom: #c3c3c3 3px solid;
+    display: block;
+    max-width: 120px;
+    margin: auto;
+}
+
+.form-wrapper .mat-form-field,
+.form-wrapper-modal .mat-form-field,
+.form-wrapper .p-inputtext,
+.form-wrapper .p-calendar .p-inputtext {
+    display: block;
+    width: 200px;
+    text-align: right;
+    direction: rtl;
+    margin: auto;
+    height: 24px;
+    border-color: #c3c3c3;
+    padding: 0 2px;
+    line-height: 24px;
+    font-size: 14px;
+}
+
+.form-wrapper-modal-w .mat-form-field {
+    display: inline-block;
+    width: 220px;
+    text-align: right;
+    direction: rtl;
+    margin: 0 20px;
+}
+
+.form-wrapper-modal-t .mat-form-field {
+    display: inline-block;
+    width: 200px;
+    text-align: right;
+    direction: rtl;
+    margin: 0 15px;
+}
+
+.color-black {
+    color: black;
+}
+
+.form-wrapper.form-wrapper-large {
+    max-width: 600px;
+    min-width: 600px;
+}
+
+.form-wrapper.form-wrapper-xlarge {
+    max-width: 800px;
+    min-width: 800px;
+}
+
+.form-wrapper,
+.form-wrapper-100 {
+    text-align: center;
+    margin: 0px 2px;
+    /* border: 1px solid #757575; */
+    background-color: #fff;
+    padding: 30px;
+    direction: rtl;
+    color: #757575;
+    /* box-shadow: 0 0 3px 1px #757575; */
+    flex-grow: 1;
+    width: 33%;
+    position: relative;
+    font-size: 16px;
+    line-height: 28px;
+    margin-top: 0;
+    max-width: 400px;
+    min-width: 200px;
+    opacity: 0.9;
+    height: calc(100% - 50px);
+}
+
+.form-wrapper-modal-w {
+    text-align: center;
+    margin: 0px auto;
+    background-color: #fff;
+    direction: ltr;
+    color: #757575;
+    flex-grow: 1;
+    position: relative;
+    font-size: 16px;
+    line-height: 28px;
+    direction: rtl;
+}
+
+.form-wrapper-modal-t {
+    text-align: center;
+    margin: 0px auto;
+    background-color: #fff;
+    direction: ltr;
+    color: #757575;
+    flex-grow: 1;
+    position: relative;
+    font-size: 14px;
+    line-height: 20px;
+    direction: rtl;
+}
+
+.form-wrapper-modal-w h1,
+.form-wrapper-modal-t h1,
+.form-wrapper-modal h1 {
+    background-color: #565656;
+    color: white;
+    line-height: 60px;
+}
+
+.form-wrapper-modal {
+    text-align: center;
+    margin: 0px auto;
+    background-color: #fff;
+    direction: ltr;
+    color: #757575;
+    flex-grow: 1;
+    position: relative;
+    font-size: 16px;
+    line-height: 28px;
+    max-width: 500px;
+    min-width: 350px;
+    padding-bottom: 30px;
+}
+
+.bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-size: contain;
+    background-image: url('assets/bg.png');
+    opacity: 0.3;
+    z-index: -1;
+    background-repeat: no-repeat;
+}
+
+.breadcrumb {
+    background-color: #c3c3c3;
+    color: #757575;
+    border-radius: 0%;
+    height: 50px;
+    padding: 0px;
+    margin: 0;
+}
+
+.breadcrumb ul {
+    text-align: right;
+    direction: rtl;
+    margin: 0 10px;
+    padding: 0;
+}
+
+.breadcrumb ul a {
+    font-weight: 300;
+    line-height: 48px;
+    font-weight: 300;
+    font-size: 16px;
+    color: #000000;
+}
+
+.breadcrumb ul:hover {
+    color: #363636!important;
+    outline: none;
+    border: 0;
+    border-radius: 0;
+}
+
+.breadcrumb ul:hover a {
+    font-weight: bold;
+    outline: none;
+    text-decoration: none;
+}
+
+.breadcrumb ul:focus {
+    outline: none;
+}
+
+.breadcrumb ul a.active_link {
+    border-bottom: #363636 2px solid;
+    font-weight: bold;
+}
+
+.p-datatable .p-datatable-thead>tr>th {
+    padding: 0.5rem;
+    text-align: center;
+    margin: 0px;
+}
+
+body .p-dialog {
+    max-width: 400px;
+}
+
+body .p-dialog .p-dialog-header {
+    background: #828282;
+    color: white;
+    padding: 1rem 1.5rem;
+}
+
+body .p-dialog .p-dialog-header .p-dialog-title,
+body .p-dialog .p-dialog-header .pi {
+    color: white;
+}
+
+body .p-dialog .p-dialog-content {
+    padding: 1.5rem 2rem 1.5rem;
+}
+
+body .p-dialog .p-dialog-footer {
+    text-align: center;
+    direction: rtl;
+}
+
+body .p-dialog .p-dialog-footer button {
+    margin: 10px;
+    display: inline-block;
+}
+
+body .p-datatable .p-datatable-tbody>tr>td {
+    padding: 0rem;
+    text-align: center;
+}
+
+body .p-datatable .p-datatable-thead>tr>th {
+    padding: 0.3rem;
+    text-align: center;
+}

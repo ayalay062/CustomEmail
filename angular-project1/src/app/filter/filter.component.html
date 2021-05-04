@@ -1,213 +1,168 @@
-<div [formGroup]= filterForm>
-<div class="p-text-center">
-    <label>בחר פרויקט</label>
-    <p-dropdown 
-    (onChange)="getTablesName()"
-    [options]="projectsName" 
-    optionLabel="projectname"  
-    placeholder=" " 
-    formControlName="projectName"  >
-   </p-dropdown>
-   </div>
-<br>
-<div class="row">
-    <div class="col-6">
-        <label>בחר טבלה לסינון </label>
-        <br>
-        <p-dropdown 
-        (onChange)="getColumnName()"
-         [options]="tableName" 
-         optionLabel="Name"
-         placeholder=" "
-         formControlName="tableOfFilter"
-         >
-       </p-dropdown>
-        </div>
-        <div class="col-6">
-            <!-- <label>בחר עמודה לסינון</label>
+<div class="form-wrapper form-wrapper-xlarge">
+    <div [formGroup]="filterForm">
+        <div class="p-text-center">
+            <label>בחר פרויקט</label>
             <br>
-          <p-dropdown  [options]="columNameForFilter"  defaultLabel="בחר עמודה לסינון" 
-           optionLabel="Name" formControlName="columsName"></p-dropdown> 
-         </div> -->
-         <label>בחר עמודה לסינון</label>
-    <br>
-  <!-- <p-multiSelect  [options]="columNameForFilter"  defaultLabel="בחר עמודה לסינון" 
-   optionLabel="Name" formControlName="columsName" ></p-multiSelect>  -->
-     <p-dropdown 
-        (onChange)="getFilterTypes()"
-         [options]="columNameForFilter" 
-         optionLabel="Name"
-         placeholder=" "
-         formControlName="columsName"
-         >
-    </p-dropdown>
- </div>
-</div>
-<br>
- <div class="row">
-<div class="col-6">
-  <label>בחר סוג סינון ברצונך לבצע על השדה</label>
- <!-- <p-button (click)="saveFilter()">שמירה </p-button> -->
- <br>
- <p-dropdown 
- (onChange)="getFilterInput()"
-  [options]="filterTypes" 
-  optionLabel="Name"
-  placeholder="בחר סוג סינון"
-  formControlName="filterType"
-  >
-</p-dropdown>
- </div>
- <!-- <div [class.display-select]="disable===false">
- <p-inputNumber formControlName="startOfSelectedNumber"  mode="decimal" inputId="withoutgrouping" [useGrouping]="false">
-</p-inputNumber>
-<label>    ל     </label>
-<p-inputNumber formControlName="endOfSelectedNumber"  mode="decimal" inputId="withoutgrouping" [useGrouping]="false">
-</p-inputNumber>
-</div> -->
-<div class="col-6" [class.display-select]="displayField[3].value===false"  >
-<p-inputSwitch formControlName="valueOfFilter" ></p-inputSwitch>
-</div>
-<div class="col-6" [class.display-select]="displayField[0].value===false"  >
-    <input input type="text" formControlName="valueOfFilter"  pInputText>
-</div>
-<div  class="col-6" [class.display-select]="displayField[1].value===false">
-  <label [class.display-select]="displayNumberInput===false">מ</label>
-<p-inputNumber formControlName="valueOfFilter" [showButtons]="true" inputId="minmax-buttons" [min]="0" [max]="100">
-</p-inputNumber>
-<label [class.display-select]="displayNumberInput===false">עד</label>
-<p-inputNumber  [class.display-select]="displayNumberInput===false" formControlName="number2" [showButtons]="true" inputId="minmax-buttons" [min]="0" [max]="100">
-</p-inputNumber>
-</div>
-<div class="col-6" [class.display-select]="displayField[2].value===false">
-<p-calendar inputId="basic" [class.display-select]= "displayDateInput===false" placeholder="בחר תאריך" formControlName="valueOfFilter"></p-calendar>
-<p-calendar formControlName="valueOfFilter" placeholder="בחר תאריכים" [class.display-select]= "displayDateInput===true" selectionMode="range" [readonlyInput]="true" inputId="range"></p-calendar>
-</div>
-</div>
-</div>
-<p-button (click)="saveFilter()">שמירה </p-button>
+            <p-dropdown (onChange)="getTablesName()" [options]="projectsName" optionLabel="projectname" placeholder=" " formControlName="projectName">
+            </p-dropdown>
+        </div>
+
+        <div>
+            <label>בחר טבלה לסינון </label>
+            <br>
+            <p-dropdown (onChange)="getColumnName()" [options]="tableName" optionLabel="Name" placeholder=" " formControlName="tableOfFilter">
+            </p-dropdown>
+        </div>
 
 
-<p-table  [value]="arrayOfSelectedFilter" [rows]="10" [paginator]="true" 
-[(selection)]="selectedFilters" [rowHover]="true" dataKey="id">
-<!-- <ng-template pTemplate="caption">
-    <div class="p-d-flex p-ai-center p-jc-between">
-        <h5 class="p-m-0">Manage Products</h5>
-        <span class="p-input-icon-left">
-            <i class="pi pi-search"></i>
-            <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Search..." />
-        </span>
+        <label>בחר עמודה לסינון</label>
+        <br>
+        <p-dropdown (onChange)="getFilterTypes()" [options]="columNameForFilter" optionLabel="Name" placeholder=" " formControlName="columsName">
+        </p-dropdown>
+
+
+        <br>
+
+        <div>
+            <label>בחר סוג סינון ברצונך לבצע על השדה</label>
+            <br>
+            <p-dropdown (onChange)="getFilterInput()" [options]="filterTypes" optionLabel="Name" placeholder="בחר סוג סינון" formControlName="filterType">
+            </p-dropdown>
+        </div>
+
+        <div [class.display-select]="displayField[3].value===false">
+            <p-inputSwitch formControlName="valueOfFilter"></p-inputSwitch>
+        </div>
+        <div [class.display-select]="displayField[0].value===false">
+            <input input type="text" formControlName="valueOfFilter" pInputText>
+        </div>
+        <div [class.display-select]="displayField[1].value===false">
+            <label [class.display-select]="displayNumberInput===false">מ</label>
+            <p-inputNumber formControlName="valueOfFilter" [showButtons]="true" inputId="minmax-buttons" [min]="0" [max]="100">
+            </p-inputNumber>
+            <label [class.display-select]="displayNumberInput===false">עד</label>
+            <p-inputNumber [class.display-select]="displayNumberInput===false" formControlName="number2" [showButtons]="true" inputId="minmax-buttons" [min]="0" [max]="100">
+            </p-inputNumber>
+        </div>
+        <div [class.display-select]="displayField[2].value===false">
+            <p-calendar inputId="basic" [class.display-select]="displayDateInput===false" placeholder="בחר תאריך" formControlName="valueOfFilter"></p-calendar>
+            <p-calendar formControlName="valueOfFilter" placeholder="בחר תאריכים" [class.display-select]="displayDateInput===true" selectionMode="range" [readonlyInput]="true" inputId="range"></p-calendar>
+        </div>
+
+        <br>
+        <button class="btn-color" (click)="saveFilter()">שמירה </button>
+        <br>
     </div>
-</ng-template> -->
-<ng-template pTemplate="header">
-    <tr>
-        <th>
-        <!-- <th style="width: 3rem"> -->
-            <!-- <p-tableHeaderCheckbox></p-tableHeaderCheckbox> -->
-        </th>
-        <th>טבלה</th>
-        <th>עמודה</th>
-        <th>סינון</th>
-        <th>ערך</th>
-        <th></th>
-    </tr>
-</ng-template>
-<ng-template pTemplate="body" let-filter>
-    <tr>
-        <td>
-            <p-tableCheckbox  [value]="filter"></p-tableCheckbox>
-            <!-- <p-tableCheckbox (click)="filter(filter)" [value]="filter"></p-tableCheckbox> -->
-            <!-- <p-checkbox (click)="filter(filter)" [value]="filter"></p-checkbox> -->
-            <!-- <p-checkbox (click)="filter(filter)" [value]="filter"></p-checkbox> -->
-        </td>
-        <td>{{filter.TableName}}</td>
-        <!-- <td>{{filter.FilterList[0].FieldName}}</td>
+
+    <p-table [value]="arrayOfSelectedFilter" [rows]="10" [paginator]="true" [(selection)]="selectedFilters" [rowHover]="true" dataKey="id">
+        <ng-template pTemplate="header">
+            <tr>
+                <th style="width:40px">
+                    <!-- <th style="width: 3rem"> -->
+                    <!-- <p-tableHeaderCheckbox></p-tableHeaderCheckbox> -->
+                </th>
+                <th>טבלה</th>
+                <th>עמודה</th>
+                <th>סינון</th>
+                <th>ערך</th>
+                <th style="width:250px"></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-filter>
+            <tr>
+                <td>
+                    <p-tableCheckbox [value]="filter"></p-tableCheckbox>
+                    <!-- <p-tableCheckbox (click)="filter(filter)" [value]="filter"></p-tableCheckbox> -->
+                    <!-- <p-checkbox (click)="filter(filter)" [value]="filter"></p-checkbox> -->
+                    <!-- <p-checkbox (click)="filter(filter)" [value]="filter"></p-checkbox> -->
+                </td>
+                <td>{{filter.TableName}}</td>
+                <!-- <td>{{filter.FilterList[0].FieldName}}</td>
         <td>{{filter.FilterList[0].FilterType}}</td>
         <td>{{filter.FilterList[0].Filter}}</td> -->
-        <td colspan="3">
-        <p-table  [value]=filter.FilterList   
-       [rowHover]="true" dataKey="FieldName">
-       <ng-template pTemplate="body" let-field>
-      <tr>
-        <td>{{field.FieldName}}</td>
-       <td>{{field.FilterType}}</td>
-       <td>{{field.Filter}}</td>
-    </tr>
-       </ng-template>
-                   </p-table>
+                <td colspan="3">
+                    <p-table [value]=filter.FilterList [rowHover]="true" dataKey="FieldName">
+                        <ng-template pTemplate="body" let-field>
+                            <tr>
+                                <td>{{field.FieldName}}</td>
+                                <td>{{field.FilterType}}</td>
+                                <td>{{field.Filter}}</td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
                 </td>
-        <td>
-            <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deleteFilter(filter)"></button>
-            <p-button (click)="externalFilter(filter)">הרחבת הסינון</p-button>
-        </td> 
-    </tr>
-</ng-template>
-</p-table>
-<p-button (click)="filter()">בצע סינון </p-button>
+                <td>
+                    <i class="pi  pi-trash" (click)="deleteFilter(filter)" style="font-size: 1.3rem;vertical-align: text-bottom;"></i>
+
+
+                    <!-- <button icon="pi pi-trash" class="btn-grey" (click)="deleteFilter(filter)"></button> -->
+                    <button class="btn-color" style="display: inline-block;margin-right: 20px;" (click)="externalFilter(filter)">הרחבת הסינון</button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+    <br>
+    <button class="btn-color" (click)="filter()">בצע סינון </button>
+</div>
 <!-- <p-inputSwitch id="regulated"  onLabel="yes">fff</p-inputSwitch> -->
-              <p-dialog [(visible)]="filterDialog" [style]="{width: '750px'}"   header="הוספת שדה לסינון" [modal]="true" styleClass="p-fluid">
-                <ng-template pTemplate="content">
-                    <lable  *ngIf="newFieldFilter.TableName">{{newFieldFilter.TableName}}</lable>
-                    <div [formGroup]= filterForm>
-                    <div class="p-field">
-                        <label >בחר שם שדה</label>
-                        <p-dropdown 
-                        (onChange)="getFilterTypes()"
-                         [options]="columNameForFilter" 
-                         optionLabel="Name"
-                         placeholder=" "
-                         formControlName="columsName" >
-                    </p-dropdown>
-                        <!-- <small class="p-error" *ngIf="submitted && !product.name">Name is required.</small> -->
-                    </div>
-                    <div>
-                        <label>בחר סוג סינון ברצונך לבצע על השדה</label>
-                        <!-- <p-button (click)="saveFilter()">שמירה </p-button> -->
-                        <br>
-                        <p-dropdown
-                        (onChange)="getFilterInput()"
-                         [options]="filterTypes" 
-                         optionLabel="Name"
-                         placeholder="בחר סוג סינון"
-                         formControlName="filterType">
-                       </p-dropdown>
-                    </div>
-                  <br>
-                    <div>
-                      <div class="col-6" [class.display-select]="displayField[3].value===false"  >
-                        <p-inputSwitch formControlName="valueOfFilter" ></p-inputSwitch>
-                        </div>
-                        <div class="col-6" [class.display-select]="displayField[0].value===false"  >
-                            <input input type="text" formControlName="valueOfFilter"  pInputText>
-                        </div>
-                        <div  class="col-6" [class.display-select]="displayField[1].value===false">
-                            <label [class.display-select]="displayNumberInput===false">מ</label>
-                          <p-inputNumber formControlName="valueOfFilter" [showButtons]="true" inputId="minmax-buttons" [min]="0" [max]="100">
-                          </p-inputNumber>
-                          <label [class.display-select]="displayNumberInput===false">עד</label>
-                          <p-inputNumber  [class.display-select]="displayNumberInput===false" formControlName="number2" [showButtons]="true" inputId="minmax-buttons" [min]="0" [max]="100">
-                          </p-inputNumber>
-                        </div>
-                        <div class="col-6" [class.display-select]="displayField[2].value===false">
-                          <p-calendar inputId="basic" dateFormat="mm-dd-yy"  [class.display-select]= "displayDateInput===false" placeholder="בחר תאריך" formControlName="valueOfFilter"></p-calendar>
-                          <p-calendar formControlName="valueOfFilter" placeholder="בחר תאריכים" [class.display-select]= "displayDateInput===true" selectionMode="range" [readonlyInput]="true" inputId="range"></p-calendar>
-                        </div>
-                    </div>              
-                </div>           
-                </ng-template>
-                 <ng-template pTemplate="footer">
-                    <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
-                    <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="saveFieldFilter()"></button>
-                </ng-template>
-              </p-dialog>
-              <p-dialog [(visible)]="nameDialog" [style]="{width: '750px'}"   header="רשימת האנשים" [modal]="true" styleClass="p-fluid">
-                <ng-template pTemplate="content">
-                  <div *ngFor="let movie of arrayOfName" >
-                    <label> {{movie}}</label>
-                  </div>
-                </ng-template>
-                <ng-template pTemplate="footer">
-                  <button pButton pRipple label="ביטול הסינון" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
-                  <button pButton pRipple label="כתיבת ההודעה" icon="pi pi-check" class="p-button-text" (click)="emailComponent()"></button>
-              </ng-template>
-                </p-dialog>
+<p-dialog [(visible)]="filterDialog" [style]="{width: '750px'}" header="הוספת שדה לסינון" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <lable *ngIf="newFieldFilter.TableName">{{newFieldFilter.TableName}}</lable>
+        <div [formGroup]="filterForm">
+            <div class="p-field">
+                <label>בחר שם שדה</label>
+                <br>
+                <p-dropdown (onChange)="getFilterTypes()" [options]="columNameForFilter" optionLabel="Name" placeholder=" " formControlName="columsName">
+                </p-dropdown>
+                <!-- <small class="p-error" *ngIf="submitted && !product.name">Name is required.</small> -->
+            </div>
+            <div>
+                <label>בחר סוג סינון ברצונך לבצע על השדה</label>
+                <!-- <button class="btn-color" (click)="saveFilter()">שמירה </button> -->
+                <br>
+                <p-dropdown (onChange)="getFilterInput()" [options]="filterTypes" optionLabel="Name" placeholder="בחר סוג סינון" formControlName="filterType">
+                </p-dropdown>
+            </div>
+            <br>
+            <div>
+                <div [class.display-select]="displayField[3].value===false">
+                    <p-inputSwitch formControlName="valueOfFilter"></p-inputSwitch>
+                </div>
+                <div [class.display-select]="displayField[0].value===false">
+                    <input input type="text" formControlName="valueOfFilter" pInputText>
+                </div>
+                <div [class.display-select]="displayField[1].value===false">
+                    <label [class.display-select]="displayNumberInput===false">מ</label>
+                    <br>
+                    <p-inputNumber formControlName="valueOfFilter" [showButtons]="true" inputId="minmax-buttons" [min]="0" [max]="100">
+                    </p-inputNumber>
+                    <label [class.display-select]="displayNumberInput===false">עד</label>
+                    <br>
+                    <p-inputNumber [class.display-select]="displayNumberInput===false" formControlName="number2" [showButtons]="true" inputId="minmax-buttons" [min]="0" [max]="100">
+                    </p-inputNumber>
+                </div>
+                <div [class.display-select]="displayField[2].value===false">
+                    <p-calendar inputId="basic" dateFormat="mm-dd-yy" [class.display-select]="displayDateInput===false" placeholder="בחר תאריך" formControlName="valueOfFilter"></p-calendar>
+                    <p-calendar formControlName="valueOfFilter" placeholder="בחר תאריכים" [class.display-select]="displayDateInput===true" selectionMode="range" [readonlyInput]="true" inputId="range"></p-calendar>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="footer">
+        <button pRipple label="Save" icon="pi pi-check" class="btn-color" (click)="saveFieldFilter()">שמור</button>
+        <button pRipple label="Cancel" icon="pi pi-times" class="btn-grey" (click)="hideDialog()">ביטול</button>
+
+    </ng-template>
+</p-dialog>
+<p-dialog [(visible)]="nameDialog" [style]="{width: '750px'}" header="רשימת האנשים" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <div *ngFor="let movie of arrayOfName">
+            <label> {{movie}}</label>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="footer">
+        <button pRipple label="כתיבת ההודעה" class="btn-color" (click)="emailComponent()">כתיבת ההודעה</button>
+
+        <button pRipple label="ביטול הסינון" class="btn-grey" (click)="hideDialog()">ביטול הסינון</button>
+    </ng-template>
+</p-dialog>

@@ -38,11 +38,13 @@ import {DialogModule} from 'primeng/dialog';
 import { SendEmailComponent } from './send-email/send-email.component';
 import {EditorModule} from 'primeng/editor';
 import { HomeComponent } from './home/home.component';
+import { DatePipe } from '@angular/common';
 
 
  // import {HttpClientModule{ from '@angular/common/http'};
 export const ROUTES: Routes = [
    { path: '', component:LoginComponent },
+   { path: 'login', component:LoginComponent },
    { path: 'New-Company', component: NewCompanyComponent } ,
    { path: 'project', component: ProjectComponent },
    { path: 'filter', component: FilterComponent },
@@ -98,7 +100,7 @@ imports: [
     
     
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 
 })

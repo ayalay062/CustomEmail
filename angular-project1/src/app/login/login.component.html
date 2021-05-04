@@ -1,41 +1,21 @@
-<div  [formGroup]="loginForm" class="login">
-  <h1>ערב  טוב{{userName}}</h1>
-  <label></label>
+<div [formGroup]="loginForm" class="login form-wrapper">
+    <h2>התחברות </h2>
+    <label></label>
     <div>
-    <label> שם חברה</label>
-    <input  type="text"  formControlName="Name" pInputText> 
-   </div>
+        <label> שם חברה</label>
+        <input type="text" formControlName="Name" pInputText>
+    </div>
     <br>
-   <div>
-    <label >סיסמה</label>
-    <input type="password" #ww formControlName="Password"  pInputText >
-  </div>
-<br>
-<p-button (click)="checkCompanyRegistered()">קיים </p-button>
-<a routerLink="/New-Company"><p-button label="חדש"></p-button></a>
+    <div>
+        <label>סיסמה</label>
+        <input type="password" #ww formControlName="Password" pInputText>
+    </div>
+    <br> <br>
+    <div class="footer-wrapper">
+        <button class="btn-color " (click)="checkCompanyRegistered()">התחבר </button>
+        <button class="btn-grey" routerLink="/New-Company">    חדש </button>
+    </div>
 </div>
 <div class="msg">
-<p-messages [(value)]="msg1"></p-messages>
+    <p-messages [(value)]="msg1"></p-messages>
 </div>
-
-
-
-
-
- 
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
