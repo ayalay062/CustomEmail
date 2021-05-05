@@ -63,7 +63,7 @@ namespace FinalProject.Controllers
             }
             return projectService.saveSelectedFilter(projectCode, tableName, columns);
         }
-        [HttpGet("end/{projectCode}/{columName}/{tableOfMailAddresss}")]
+        [HttpGet("end/{projectCode}/{columName}/{tableOfMailAddresss}/{emailColumn}")]
         [EnableCors("CorsPolicy")]
         public bool end(int projectCode,string columName, string tableOfMailAddresss,string emailColumn)
         {

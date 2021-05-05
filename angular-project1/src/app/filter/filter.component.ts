@@ -264,8 +264,8 @@ export class FilterComponent implements OnInit {
       this.selectedFilters = null;
       return this.FS.getNames(this.filterToSend[0]).subscribe((result) => {
         debugger;
+        this.arrayOfName = new Array();
         if (result.length > 0) {
-          this.arrayOfName = new Array();
           result.forEach((element) => {
             this.arrayOfName.push(element);
           });

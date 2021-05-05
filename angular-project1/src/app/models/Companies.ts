@@ -5,6 +5,6 @@
     Password:string;
     ContractStartDate:Date;
     Logo:string;
-    LinkToDb:string;
+    serverName:string;
 
 }

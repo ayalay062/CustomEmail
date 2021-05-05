@@ -204,9 +204,9 @@ namespace Repositories
             using(Models.FinalProject context = new Models.FinalProject())
             {
                 Projects project = context.Projects.Where(p => p.ProjectCode == projectCode).FirstOrDefault();
-                project.FieldNameWithTheEmailAddress = columName;
+                project.FieldNameWithTheEmailAddress = emailColumn;
                 project.TableNameWithTheEmailField = tableOfMailAddress;
-                project.Name = emailColumn;
+                project.Name = columName;
                 context.SaveChanges();
                 return true;
 

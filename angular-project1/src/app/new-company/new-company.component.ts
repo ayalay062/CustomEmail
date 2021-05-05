@@ -15,7 +15,7 @@ export class NewCompanyComponent implements OnInit {
     Password:[''], 
     ContractStartDate: [''],
     Logo: [''],
-    LinkToDb: [''],
+    serverName: [''],
     
   });
  
