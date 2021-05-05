@@ -8,8 +8,7 @@
             <p-dropdown (onChange)="getTablesName()" [options]="projectsname" optionLabel="projectname" placeholder=" " formControlName="projectName">
             </p-dropdown>
         </div>
-        <br>
-
+       
         <div [class.display-select]="disable===false">
             <div>
                 <label>בחר טבלה לסינון </label>
@@ -22,12 +21,13 @@
                 <br>
                 <p-multiSelect [options]="columNameForFilter" defaultLabel="בחר עמודה לסינון" optionLabel="Name" formControlName="columsName" (onPanelHide)="binSelect()"></p-multiSelect>
             </div>
+            <br>
             <div>
                 <button class="btn-color" (click)="saveSelectedFilter()">שמירה </button>‏
             </div>
-
+            <br>
         </div>
-        <br>
+     
 
         <div [class.display-select]="disable===false">
             <div>
@@ -48,6 +48,7 @@
                 <p-dropdown [options]="columName" optionLabel="Name" placeholder=" " formControlName="columName">
                 </p-dropdown>
             </div>
+            <br>
             <div>
                 <button class="btn-color" (click)="end()">סיום </button>
             </div>
