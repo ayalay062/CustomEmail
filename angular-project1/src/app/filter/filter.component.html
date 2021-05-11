@@ -52,6 +52,9 @@
         <br>
         <button class="btn-color" (click)="saveFilter()">שמירה </button>
         <br>
+        <div class="msg">
+            <p-messages [(value)]="msg1"></p-messages>
+        </div>
     </div>
 
     <p-table [value]="arrayOfSelectedFilter" [rows]="10" [paginator]="true" [(selection)]="selectedFilters" [rowHover]="true" dataKey="id">

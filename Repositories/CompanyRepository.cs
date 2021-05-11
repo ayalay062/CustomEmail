@@ -66,20 +66,29 @@ namespace Repositories
             using (Models.FinalProject context = new Models.FinalProject())
             {
                Companies c = context.Companies.Where(compay => compay.Name == name).FirstOrDefault();
-                var companyCode = c.Code;
-                if (c != null)
+                int companyCode;
+                if (c == null)
                 {
-                    if (c.Password == password)
-                    {
-                        message = "the password is corentlly";
-                        companyCode = c.Code;
-                    }
-                    else
-                        message = "not corentlly";
+                    message = "שם משתמש לא קיים במערכת";
+                    companyCode = 0;
                 }
                 else
                 {
-                    message = "worng try again";
+                    companyCode = c.Code;
+                    if (c != null)
+                    {
+                        if (c.Password == password)
+                        {
+                            message = "the password is corentlly";
+                            companyCode = c.Code;
+                        }
+                        else
+                            message = "סיסמה שגויה";
+                    }
+                    else
+                    {
+                        message = "worng try again";
+                    }
                 }
                 var x = new { text = message, code = companyCode };
                 string a = x.text;

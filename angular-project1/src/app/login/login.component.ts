@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
          localStorage.setItem('companyCode', result.code);
          this.router.navigate(['/home']);
          break;
-         case("not corentlly"):
+         case("סיסמה שגויה"):
           this.msg1=[{severity:'error', summary:" ", detail:result.text}];
           break;
           case("worng try again"):

@@ -9,6 +9,7 @@ import { DisplayField } from '../models/DisplayField';
 import { FieldFilter } from '../models/FieldFilter';
 import { Router } from '@angular/router';
 import { DatePipe } from '@angular/common';
+import { Message } from 'primeng/api';
 
 @Component({
   selector: 'app-filter',
@@ -24,6 +25,7 @@ export class FilterComponent implements OnInit {
     number2: [''],
     valueOfFilter: [''],
   });
+  msg1:Message[];
   typeOfFielde: string;
   fieldType: string;
   displayDateInput: boolean;
@@ -308,6 +310,9 @@ export class FilterComponent implements OnInit {
     return this.FS.saveFilter(filter).subscribe((result) => {
       debugger;
       filter.id = result;
+      debugger;
+      if(result!=0)
+      this.msg1=[{severity:'success', summary:" ", detail:"שמירה בוצעה בהצלחה"}];
       this.arrayOfSelectedFilter.push(filter);
     });
   }
